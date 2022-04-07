@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/static/css/main.d86d7134.css",
+    "main.js": "/static/js/main.1f726259.js",
+    "static/media/London.jpg": "/static/media/London.5c6ed66da268ff63e998.jpg",
+    "static/media/email.png": "/static/media/email.ede6ba8fe27d395f7ef7.png",
+    "index.html": "/index.html",
+    "main.d86d7134.css.map": "/static/css/main.d86d7134.css.map",
+    "main.1f726259.js.map": "/static/js/main.1f726259.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d86d7134.css",
+    "static/js/main.1f726259.js"
+  ]
+}

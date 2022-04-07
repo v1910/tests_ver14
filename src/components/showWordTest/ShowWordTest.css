@@ -1,0 +1,225 @@
+.body_words {
+    width: 100%;
+    text-align: center;
+    padding-top: 60px;
+    padding-bottom: 10px;
+    text-align: center;
+    color: #00cc99; 
+    font-family: "Open Sans";
+    font-size: 28px;
+    font-weight: 400; 
+}
+
+/* button_show_descr button*/
+#button_show_descr {
+    background-color: #9A8870;/*LightGray; #4CAF50;*/
+    color: white;
+    width: 250px;
+    padding: 16px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-size: 20px;
+    border: none;
+    border-radius: 10px;  
+    cursor: pointer; 
+}
+
+ /* show label_descr*/
+#label_descr {
+    color: black; /*#EEDDFF;	*/
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+  
+
+/* block of inputing root word*/
+#input_word {
+    padding: 16px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    margin-bottom: 10px;
+    border: block;		
+}
+ 
+ /* input the root word*/
+#input_input_word {
+    background-color: white;
+    color: black;
+    padding: 4px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 260px;
+    margin-bottom: 10px;
+    font-size: 20px;
+    border: none;	
+    display: block; 
+    cursor: pointer;
+}
+ 
+ /* check inputing word */
+#button_input_word {
+    background-color: #9A8870;/*LightGray; #4CAF50;*/
+    color: white;
+    width: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 16px;
+    margin-bottom: 5px;
+    font-size: 20px;
+    border: none;
+    border-radius: 10px; 
+/*    cursor: pointer;  */
+}
+ 
+ /* yes - correct inputing word, other - no*/
+#label_yes_no_word {
+    color: black;	
+    margin-bottom: 10px;
+    margin-left: 5px;
+    width: 10px;
+    font-size: 20px;
+    border-color: #4CAF50;
+}
+ 
+#button_show_answer {
+    background-color: #9A8870;/*LightGray; #4CAF50;*/
+    color: white;
+    width: 250px;
+    padding: 16px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-size: 20px;
+    border: none;
+    border-radius: 10px; 
+    cursor: pointer;  
+}
+ 
+#label_answer {
+	color: black;	
+    margin-bottom: 10px;
+	margin-left: auto;
+    margin-right: auto;
+	display: block;
+}
+
+/* button_show_words button*/
+#button_show_words {
+    /*   background-color: transparent;
+       border: 2px solid yellow;
+    */   
+    background-color: #9A8870;/*LightGray; #4CAF50;*/
+    color: white;
+    width: 250px;
+    padding: 16px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-size: 20px;
+    border: none;
+    border-radius: 10px;   
+    cursor: pointer;
+}
+
+/* show words*/
+#label_words {
+    color: black;	
+    margin-bottom: 10px;
+	margin-left: auto;
+    margin-right: auto;
+	display: block;
+}   
+
+
+/* button_show_transcription button*/
+#button_show_transcription {
+    background-color: #9A8870;/*LightGray; #4CAF50;*/
+    color: white;
+    width: 250px;
+    padding: 16px;
+    margin-bottom: 10px;
+    font-size: 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+/* show label_transcription*/
+#label_transcription {
+    color: black;		
+    margin-bottom: 10px;
+	margin-left: auto;
+    margin-right: auto;
+    display: block;	
+}
+
+
+/* button_next_word button*/
+#button_next_word {
+    background-color: #9A8870;/*LightGray; #4CAF50;*/
+    color: white;
+    width: 250px;
+    padding: 16px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-size: 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+ }
+ 
+ #wordTopic {
+    display: block;	
+    text-align: center;
+    color: #008080; /*#FFBF00;  #6495ED;	#40E0D0*/	
+    margin-bottom: 20px;
+	margin-left: auto;
+    margin-right: auto;
+    font-size: 26px;
+ }
+
+ #other_sentences{
+     display: block;
+     margin-left: 30%;
+     text-align: left;
+     font-size: 26px;
+ }
+
+ .class_line{
+     width: auto;
+ }
+
+ #sentence_1{
+    font-size: 26px;
+    font-weight: bold;
+    color: #008080; /*#FFBF00;  #6495ED;	#40E0D0*/	
+ }
+
+ .boldStyle{
+     font-weight: bold;
+ }
+
+ .wordTopic{
+    display: block;
+    margin-left: 30%;
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 26px;
+ }
+
+ /* words instructions button*/
+#words_instructions_button {
+    background-color: #3badad;
+    color: white;
+    width: 400px;
+    height: 50px;
+    padding: 16px;
+    font-size: 16px;
+    font-size: 20px;
+    border: none;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    cursor: pointer;
+ }

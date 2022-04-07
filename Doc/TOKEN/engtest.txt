@@ -1,0 +1,27 @@
+Project:
+engtest mail
+
+Project ID:
+169113029343-pf5i2fjv0lporqvtqrm2tvsdcmo5eesb.apps.googleusercontent.com
+
+Client Secret:
+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
+
+Authorization code:
+4/0AX4XfWhfRcDt_7w6u3mtE0ds63fu07H9FxhZyEWPNBjbq4OrpcM4RDx4I3GcBxXxk_SvEQ
+
+Refresh code:
+1//040mKrnLezcd5CgYIARAAGAQSNwF-L9IrL52tRdm-FbjPioXyFCnzieK35nQbYBYi189vIfHY1H7-h_Vx9sfj5w1lEseBANM8yG8
+
+access token:
+ya29.A0ARrdaM-nmiLXPCiN4x4PwCcG9OGRuYEeSdtfnG2j8AL1SdC41iuQRrrgPyprK8rllmvT0WNzdh9K2fdMxKwfjYq-eTEp0cgl16Xtc1MKVUdZyjX_f-MrE6Vy1wPio1Erh9cuiCi4Ko-HodKJk2Htw5YnWaZr
+
+{
+  "access_token": "ya29.A0ARrdaM-nmiLXPCiN4x4PwCcG9OGRuYEeSdtfnG2j8AL1SdC41iuQRrrgPyprK8rllmvT0WNzdh9K2fdMxKwfjYq-eTEp0cgl16Xtc1MKVUdZyjX_f-MrE6Vy1wPio1Erh9cuiCi4Ko-HodKJk2Htw5YnWaZr", 
+  "scope": "https://mail.google.com/", 
+  "token_type": "Bearer", 
+  "expires_in": 3599, 
+  "refresh_token": "1//040mKrnLezcd5CgYIARAAGAQSNwF-L9IrL52tRdm-FbjPioXyFCnzieK35nQbYBYi189vIfHY1H7-h_Vx9sfj5w1lEseBANM8yG8"
+}
+
+code=4%2F0AX4XfWhfRcDt_7w6u3mtE0ds63fu07H9FxhZyEWPNBjbq4OrpcM4RDx4I3GcBxXxk_SvEQ&redirect_uri=https%3A%2F%2Fdevelopers.google.com%2Foauthplayground&client_id=169113029343-pf5i2fjv0lporqvtqrm2tvsdcmo5eesb.apps.googleusercontent.com&client_secret=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&scope=&grant_type=authorization_code

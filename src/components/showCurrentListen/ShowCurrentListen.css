@@ -1,0 +1,105 @@
+
+.listen_cont_all {
+    display: flex;
+    width: 400px;
+/*    height: 400px;*/
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: black;    
+	padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.listen_body {
+/*    position: fixed;
+    top: 50%;*/
+    width: 300px;
+/*    height: 200px;*/
+    margin-bottom: 20px;
+    justify-content: center;
+    color: #00cc99; 
+    font-family: "Open Sans";
+    font-size: 18px;
+    font-weight: 400; 
+}
+
+figure { /* for canvas */
+    margin: 0;
+    text-align: center;
+}
+
+/* listen text button cont*/
+#listen_button_cont {
+    width: 400px;
+    height: 300px;
+    background-color: white;/*LightGray; #4CAF50;*/
+    color: white;
+    width: 400px;
+    margin-top: 60px;
+    margin-bottom: 10px;
+ }
+
+/* listen text button*/
+#listen_button {
+    background-color: #9A8870;/*LightGray; #4CAF50;*/
+    color: white;
+    width: 140px;
+    height: 50px;
+    padding: 16px;
+    font-size: 16px;
+    font-size: 20px;
+    border: none;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-bottom: 20px;;
+ }
+
+/* contaner of text*/ 
+.listen_text {
+    font-size: 16px;
+    color: black;
+    margin-top: 20px;
+    padding-top: 25px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    text-align: left;
+}
+
+#audioFileName1{
+    display: block;	
+    text-align: center;
+    color: #008080; /*#FFBF00;  #6495ED;	#40E0D0*/	
+    margin-bottom: 20px;
+	margin-left: auto;
+    margin-right: auto;
+    font-size: 26px;
+}
+
+#audioFileName2{
+    display: block;	
+    text-align: center;
+    color: #008080; /*#FFBF00;  #6495ED;	#40E0D0*/	
+    margin-bottom: 20px;
+	margin-left: auto;
+    margin-right: auto;
+    font-size: 26px;
+}
+
+#listenTitle{
+    display: block;
+    text-align: center;
+	margin-left: auto;
+    margin-right: auto;
+    font-size: 22px;
+    color: black;
+    color: #008080; /*#FFBF00;  #6495ED;	#40E0D0*/	
+}
+
+hr {
+    clear:both;
+    display:block;
+    width: 96%;               
+    background-color:#FFFF00;
+    height: 1px;
+  }

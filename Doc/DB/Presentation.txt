@@ -1,0 +1,47 @@
+//DB of Presentation
+
+db.Presentation.insertOne( {'name': 'Talk through', 'phrases': ['Now let us talk through the main problems with the new client base.']})
+
+✅ Talk through — обсуждать что-либо в деталях, очень подробно. Также это фразовый глагол имеет значение "подробно объяснять что-либо кому-либо", если используется с дополнением: talk somebody through something:
+▪ Now let us talk through the main problems with the new client base. — Теперь давайте детально обсудим проблемы с нашей базой клиентов.
+
+db.Presentation.insertOne( {
+'name': 'Run through',  
+'phrases': ['At first we will run through the main points and then we will discuss them in detail.']
+})
+ 
+✅ Run through — просмотреть, быстро пройтись по списку, не вдаваясь в детали каждого пункта:
+▪ At first we will run through the main points and then we will discuss them in detail. — Сначала мы просмотрим основные пункты, а после мы обсудим их подробно.
+
+db.Presentation.insertOne( {
+'name': 'Go into',  
+'phrases': ['I will not go into details now, but at the end of the presentation you will be able to ask your questions.']
+})
+ 
+✅Go into — этот фразовый глагол является в некотором роде противоположным по значению предыдущему глаголу. Go into something — описывать в деталях, углубляться в суть чего-либо, очень подробно излагать какую-либо информацию:
+▪ I will not go into details now, but at the end of the presentation you will be able to ask your questions. — Я сейчас не буду вдаваться в детали, но в конце презентации вы сможете задать ваши вопросы.
+ 
+ db.Presentation.insertOne( {
+'name': 'Go on',  
+'phrases': ['After the break the participants went on discussing the possible solutions to the problem.']
+})
+
+✅ Go on — продолжать, развивать тему, возобновить разговор, обсуждение после паузы. Такое же значение имеет и фразовый глагол carry on. После этих фразовых глаголов используется герундий:
+▪ After the break the participants went on discussing the possible solutions to the problem. — После перерыва участники продолжили обсуждать возможные решения проблемы.
+ 
+ db.Presentation.insertOne( {
+'name': 'Put forward',  
+'phrases': ['Several constructive ideas were put forward during the discussion.']
+})
+
+✅ Put forward — предлагать, выносить на рассмотрение (план, идею, предложение). Это separable phrasal verb, что значит, что дополнение может стоять "в середине" фразового глагола:
+▪ Several constructive ideas were put forward during the discussion. — Во время дискуссии было выдвинуто несколько конструктивных идей.
+ 
+ db.Presentation.insertOne( {
+'name': 'Sum up',  
+'phrases': ['By way of conclusion, he summed up all the points covered in his report.']
+})
+
+✅ Sum up — подводить итоги, подытожить:
+▪ By way of conclusion, he summed up all the points covered in his report. — В качестве вывода, он подытожил все пункты, освещенные в его докладе
+
