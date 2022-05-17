@@ -90,7 +90,7 @@ hr{
   color: black; 
 }
 
-#statistics_submit{
+#emailSubmit{
   width: 360px;
   height: 30px;
   margin-left: auto;
@@ -107,7 +107,38 @@ hr{
   cursor: pointer;
 }
 
-#statistics_submit:hover{
+#emailSubmit:hover{
   background-color: yellow;
 }
 
+#errorEmail{
+  width: 360px;
+  height: 20px;
+	margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  text-align:  left;
+  margin-top: 5px;
+  font-family: "Open Sans";
+  font-size: 16px;
+  font-weight: 200;
+  color: red; 
+} 
+
+#sendOK{
+  width: 400px;
+  height: 60px;
+  display: none;
+  background-color: #f0f8ff;
+	margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  padding-top: 20px;
+  text-align:  center;
+  vertical-align: middle;
+  margin-top: 5px;
+  font-family: "Open Sans";
+  font-size: 20px;
+  font-weight: 200;
+  color: black; 
+}

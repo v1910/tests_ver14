@@ -1,0 +1,1 @@
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_","ns":"TESTS.PhrasalVerbs"}],"uuid":"ae9debb81b434fe7af77ef6422d4d906","collectionName":"PhrasalVerbs","type":"collection"}

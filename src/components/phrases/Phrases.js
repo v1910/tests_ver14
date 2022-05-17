@@ -45,30 +45,21 @@ export function Phrases() {
 //console.log('Phrases: currentPhrasesServer=',currentPhrasesServer);
 
 
-
-    useEffect(() => {
-        fetch(currentPhrasesServer)
-        .then(response => response.json())
-        .then(phrases => {
-            dispatch({type: 'ShowCurrentPhrases', 
-            payload: {
-                phrases: phrases
-            }
-            })
-
-        })
-    });
-
 //console.log('Phrases: showHidePhrases=',showHidePhrases);     
 //console.log('Phrases: showCurrentPhrasesWork=',showCurrentPhrasesWork);
 
-/*
-    if(showHidePhrases){
-        phrases_btn_visibility = {display: 'block'} 
-    } else {
-        phrases_btn_visibility = {display: 'none'}; 
-    } 
-*/
+    const axios = require('axios');
+    async function makeGetRequest(){
+    	let res = await axios.get(currentPhrasesServer);
+    	let data = res.data;
+    	dispatch({type: 'ShowCurrentPhrases',
+    		payload: {
+    			phrases: data
+    		}
+    	})
+    }
+    makeGetRequest();
+
     let phrases_button = <button id='footerBtnListen'  onClick= {upButton}>UP</button>;
 
     if(showHidePhrases === 'showHidePhrases') showCurrentPhrasesWork = <ShowCurrentPhrases />

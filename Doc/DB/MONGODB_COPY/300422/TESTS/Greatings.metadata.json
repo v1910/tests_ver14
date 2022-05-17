@@ -1,0 +1,1 @@
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_","ns":"TESTS.Greatings"}],"uuid":"5786d2f177d84955a291740d9760dbce","collectionName":"Greatings","type":"collection"}

@@ -1,0 +1,1 @@
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_","ns":"TESTS.Jokes"}],"uuid":"08baa8d6e1d64de2bb4f6e2d801197a0","collectionName":"Jokes","type":"collection"}

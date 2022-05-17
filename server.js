@@ -8,66 +8,10 @@ let bodyParser    = require('body-parser');
 const nodemailer  = require('nodemailer');
 const { getMaxListeners } = require('process');
 const dotenv      = require('dotenv');
-const oauth2      = require('googleapis');
+const { google }  = require('googleapis');
 
-dotenv.config();
+//dotenv.config();
 
-
-const CLIENT_ID = '1029265838911-puufht5qdi91rmg83g014cc4aj96u47s.apps.googleusercontent.com';
-const CLIENT_SECRET = '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';
-const REDIRECT_URI = 'https://developers.google.com/oauthplayground';
-const REFRESH_TOKEN = '1//04CuXsf3gi8tiCgYIARAAGAQSNwF-L9IrG8avR49udmxfkqMb70FfI0pMG6tc6kIMZtxViZmYv2zE2KYeZbhVFh7G2sEWbiDw7Zo';
-
-const oAuth2Client = new oauth2.google.auth.OAuth2(CLIENT_ID, CLIENT_SECRET, REDIRECT_URI)
-oAuth2Client.setCredentials({refresh_token: REFRESH_TOKEN})
-
-async function sendMail(){
-    try {
-      const accessToken = await oAuth2Client.getAccessToken()
-
-      const transport = nodemailer.createTransport({
-        service: 'gmail',
-        auth: {
-          type: 'OAuth2',
-          user: 'doc.vik1910@gmail.com',
-          clientId: CLIENT_ID,
-          clientSecret: CLIENT_SECRET,
-          refreshToken: REFRESH_TOKEN,
-          accessToken: accessToken
-        }
-      })
-
-      const mailOptions = {
-        from: 'DOCVIK <doc.vik1910@gmail.com>',
-        to: 'ic.okbshs@gmail.com',
-        subject: 'Hello VIK',
-        text: 'Hello from vik',
-        html: '<h1>Hello doc.VIK</h1>'
-      }
-
-      const result = await transport.sendMail(mailOptions);
-      return result;
-
-    } catch (error) {
-      return error
-    }
-}
-
-sendMail().then(result => console.log('Email sent', result))
-.catch(error => console.log(error.message))
-/*
-"access_token": "ya29.A0ARrdaM866btz5pIxRtkg5IF6keZJFL0BcgI0J7mzl_5Ew3GIVQkBaJp47-MB6YO912MUbJk17mYotM3I40rP-Lqxd4__i3kkIyOF0os917ESaxtsoovxubWLS9Rpy3K0IwsDIXenZPLCYCD48X2vT1CYDsea", 
-"scope": "https://mail.google.com/", 
-"token_type": "Bearer", 
-"expires_in": 3599, 
-"refresh_token": "1//04CuXsf3gi8tiCgYIARAAGAQSNwF-L9IrG8avR49udmxfkqMb70FfI0pMG6tc6kIMZtxViZmYv2zE2KYeZbhVFh7G2sEWbiDw7Zo"
-}
-
-Client ID
-1029265838911-puufht5qdi91rmg83g014cc4aj96u47s.apps.googleusercontent.com
-Client secret
-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
-*/
 
 const port = 80; //8000 80
 
@@ -77,6 +21,60 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json())
 
 app.use(express.static('./build'))
+
+
+// nodemail --------------------
+
+const CLIENT_ID = '826658848754-a5sr9jk948hc285rdphqe6hn1qr999u5.apps.googleusercontent.com';
+const CLIENT_SECRET =  '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';
+const REDIRECT_URI = 'https://developers.google.com/oauthplayground';
+const REFRESH_TOKEN = '1//04mSv4PZnzZx-CgYIARAAGAQSNwF-L9IrmphJz89LDtX4J7YHZz-j_AEF2BCKTqS5_NbQH8rx9nBXOczwT38BRkr3AVt8N8iT62M';
+
+const oAuth2Client = new google.auth.OAuth2(CLIENT_ID, CLIENT_SECRET, REDIRECT_URI)
+oAuth2Client.setCredentials({refresh_token: REFRESH_TOKEN})
+
+app.post('/FooterEmail',(req,res) => {
+
+//console.log('server: req.body.contactEmail.=', req.body.contactEmail);  
+//console.log('server: req.body.contactComment.=', req.body.contactComment);  
+
+async function sendMail(){
+  try {
+    const accessToken = await oAuth2Client.getAccessToken()
+
+    const transport = nodemailer.createTransport({
+      service: 'gmail',
+      auth: {
+        type: 'OAuth2',
+        user: 'doc.kokhanovskyi@gmail.com',
+        clientId: CLIENT_ID,
+        clientSecret: CLIENT_SECRET,
+        refreshToken: REFRESH_TOKEN,
+        accessToken: accessToken
+      }
+    })
+
+    const mailOptions = {
+      from: 'engtest.org <doc.vik1910@gmail.com>',
+      to: 'doc.kokhanovskyi@gmail.com',
+      subject: 'Hello ' + req.body.contactEmail + ' !',
+      text: 'Hello from vik',
+      html: '<h5>This letter is from ' + req.body.contactEmail + '<br />' + 'The leter text:<br />' + req.body.contactComment +'</h5>'
+    }
+
+    const result = await transport.sendMail(mailOptions);
+    return result;
+
+  } catch (error) {
+    return error
+  }
+}
+
+sendMail().then(result => console.log('Email sent', result))
+.catch(error => console.log(error.message))
+
+});//app.post
+
 
 // Connection URL
 //const url = 'mongodb://localhost';
@@ -233,79 +231,6 @@ app.post('/Statistics',(req,res) => {
 });
 
 
-
-app.post('/FooterEmail',(req,res) => {//=========================================================================
-
-console.log('server: req.body.contactEmail.=', req.body.contactEmail);  
-console.log('server: req.body.contactComment.=', req.body.contactComment);  
-  //  Get the data of email form
-
-//  "use strict";
-//  const nodemailer = require("nodemailer");
-  /*
-  // async..await is not allowed in global scope, must use a wrapper
-  async function main() {
-    // Generate test SMTP service account from ethereal.email
-    // Only needed if you don't have a real mail account for testing
-    let testAccount = await nodemailer.createTestAccount();
-  
-    // create reusable transporter object using the default SMTP transport
-    let transporter = nodemailer.createTransport({
-      host: "smtp.ethereal.email",
-      port: 587,
-      secure: false, // true for 465, false for other ports
-      auth: {
-        user: 'ic.okbsh@sgmail.com',//testAccount.user, // generated ethereal user
-        pass: 'prospect_227'//testAccount.pass, // generated ethereal password
-      },
-    });
-  
-    // send mail with defined transport object
-    let info = await transporter.sendMail({
-      from: '"Vladik 👻" <foo@example.com>', // sender address
-      to: "doc.vik1910@gmail.com, baz@example.com", // list of receivers
-      subject: "Hello ✔", // Subject line
-      text: "Hello world----?", // plain text body
-      html: "<b>Hello world?----</b>", // html body
-    });
-  
-    console.log("Message sent: %s", info.messageId);
-    // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
-  
-    // Preview only available when sending through an Ethereal account
-    console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
-    // Preview URL: https://ethereal.email/message/WaQKMgKddxQDoou...
-  }
-  
-  main().catch(console.error);
-*/
-
-
-  let transporter = nodemailer.createTransport({
-    host: oauth2.googleapis.com,
-    port: 465,
-    secure: true,
-    auth:  {
-        type: 'OAuth2',
-        clientId: '169113029343-vvsi8274ocoi5fl5l4pd5r55fmdssuro.apps.googleusercontent.com',
-        clientSecret: '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'
-    }
-  });
-
-  transporter.sendMail({
-    from:'vladik1910@gmail.com',
-    to: 'ic.okbshs@gmail.com',
-    subject: 'My Message',
-    text: 'I hope this massage gets through!',
-    auth: {
-      user: "vladik1910@gmail.com",
-      refreshToken: '1//04_Cncgw8zQlcCgYIARAAGAQSNwF-L9IrrIAoqL_ILkRiFE1U1i4KbUQVx2nrQlw9a7g_c1TO99yIO1x1c2rZ8nIUSGxO8vBgxFo',
-      accessToken: 'ya29.A0ARrdaM9AF1RVrktKXVBmVR6ryYh22oBepYj_89OgISDAQW7U86FwftD47wgxRk_2GaxT78MkWbuj96-gZBpnG103QN5ioaeFgOaopJvHY9IlYG0oCYD3qaGPFhmG_AnUlK5jPCsbw2g92bGIrXOOJ8JC4Ej8',
-      expires: 3599
-    }
-  });
-
-});//app.post
 
 
 app.get('/getAllInsertSections',(req,res) => {

@@ -126,6 +126,7 @@ console.log('HeaderWordsList: all_words[0][0].D=',all_words[0][0].D);
                                     showHideJokes:                              'showHideWords',
                                     ShowHideStatistics:                         'showHideWords',
                                     statistics_wrapper_visibility:              {display: 'none'},
+                                    phrases_wrapper_visibility: 		  {display: 'none'},                                   
                                     checkStyle:                                 {backgroundColor: 'rgba(154,136,112,0.5)'},
                                     all_input_sections:  
                                         {

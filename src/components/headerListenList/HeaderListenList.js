@@ -85,6 +85,7 @@ export function HeaderListenList() {
                                                                                     list_tests_wrapper: 'hidden',
                                                                                     list_words_wrapper: 'hidden',
                                                                                     statistics_wrapper_visibility: {display: 'none'},
+                                                                                    phrases_wrapper_visibility: {display: 'none'},                                                                                    
                                                                                     all_input_sections:  
                                                                                         {
                                                                                             all_input_tests: all_input_sections.all_input_tests,

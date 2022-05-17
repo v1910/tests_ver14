@@ -248,6 +248,14 @@ let initialStore =
 
     mailFormStyle:                              {display: 'none'}, // mailForm visibility
 
+    inputEmailValue:                            null,
+
+    errorEmailText:                             null, //visibility sending the letter
+
+    styleSendOK:                                {display: 'none'},  
+
+    opacityOK:                                  1    
+
 }; //initialStore  
 
 let workInitialStore = initialStore;
@@ -453,6 +461,7 @@ console.log('Test_UP: up=',payload.up);
                 showHideJokes:                              payload.showHideJokes,
                 ShowHideStatistics:                         payload.ShowHideStatistics,
                 statistics_wrapper_visibility:              payload.statistics_wrapper_visibility,
+                phrases_wrapper_visibility: 		     payload.phrases_wrapper_visibility,
                 checkStyle:                                 payload.checkStyle,
                 all_input_sections:                         payload.all_input_sections
             };         
@@ -598,6 +607,7 @@ console.log('Test_UP: up=',payload.up);
                 list_tests_wrapper:     payload.list_tests_wrapper,
                 list_words_wrapper:     payload.list_words_wrapper,
                 statistics_wrapper_visibility: payload.statistics_wrapper_visibility,
+                phrases_wrapper_visibility:    payload.phrases_wrapper_visibility,                
                 all_input_sections:     payload.all_input_sections
             };               
 
@@ -636,6 +646,9 @@ console.log('Test_UP: up=',payload.up);
             axios.post('/postAllInsertSections', {
                 sections: payload.all_input_sections
             })                   
+            axios.get('/get'+payload.currentPhrases).then(resp => {
+		payload.phrases = resp.data;
+            });                     
 //console.log('MainReducer: HeaderPhrasesList: showHideListen=',payload.showHideListen);        
             return {
                 ...state,
@@ -645,7 +658,8 @@ console.log('Test_UP: up=',payload.up);
                 showHideListen:             payload.showHideListen,                                                                                  
                 showHidePhrases:            payload.showHidePhrases,   
                 showHideJokes:              payload.showHideJokes, 
-                ShowHideStatistics:         payload.ShowHideStatistics,                                                                              
+                ShowHideStatistics:         payload.ShowHideStatistics,    
+                phrases_wrapper_visibility: payload.phrases_wrapper_visibility,                                                                                          
                 list_tests_wrapper:         payload.list_tests_wrapper,
                 list_words_wrapper:         payload.list_words_wrapper,
                 list_listen_wrapper:        payload.list_listen_wrapper,
@@ -704,6 +718,7 @@ console.log('Test_UP: up=',payload.up);
                 list_listen_wrapper:    payload.list_listen_wrapper,
                 phrases:                payload.phrases,
                 statistics_wrapper_visibility: payload.statistics_wrapper_visibility,
+                phrases_wrapper_visibility:    payload.phrases_wrapper_visibility,                
                 all_input_sections:     payload.all_input_sections
             }; 
 
@@ -728,7 +743,8 @@ console.log('Test_UP: up=',payload.up);
                 list_listen_wrapper:    payload.list_listen_wrapper,
                 phrases:                payload.phrases,
                 statistics_wrapper_visibility: payload.statistics_wrapper_visibility,
-                all_input_sections:     payload.all_input_sections
+                all_input_sections:     payload.all_input_sections,
+                phrases_wrapper_visibility: payload.phrases_wrapper_visibility                
             }; 
             
         case 'Statistics_statistics':                
@@ -767,7 +783,18 @@ console.log('Test_UP: up=',payload.up);
         case 'Footer':                
             return {
                         ...state,
-                        mailFormStyle:           payload.mailFormStyle
+                        mailFormStyle:           payload.mailFormStyle,
+                        showHideTest:            payload.showHideTest,
+                        showHideWords:           payload.showHideWords,                                 
+                        showHideListen: payload.showHideListen,                                                                                  
+                        showHidePhrases:         payload.showHidePhrases,    
+                        showHideJokes:           payload.showHideJokes,
+                        showHideStatistics:      payload.showHideStatistics,
+                        list_tests_wrapper:      payload.list_tests_wrapper,
+                        list_words_wrapper:      payload.list_words_wrapper,
+                        list_listen_wrapper:     payload.list_listen_wrapper,
+                        phrases:                 payload.phrases,
+                        statistics_wrapper_visibility: payload.statistics_wrapper_visibility
                     };                     
         
         case 'FooterEmail':                
@@ -783,8 +810,27 @@ console.log('Test_UP: up=',payload.up);
                         ...state,
                         contactEmail:           payload.contactEmail,
                         contactComment:         payload.contactComment,
-                        mailFormStyle:          payload.mailFormStyle
+                        mailFormStyle:          payload.mailFormStyle,
+                        styleSendOK:            payload.styleSendOK                        
                     };                     
+
+
+        case 'footerOpacityOK':                
+            console.log('footerOpacityOK: payload.styleSendOK=',payload.styleSendOK);        
+            return {
+                        ...state,
+                        styleSendOK:           payload.styleSendOK
+                    };                
+                    
+        case 'footerInputEmail':     
+                    //console.log('MainReducer: payload.errorEmailText=',payload.errorEmailText)
+            if(payload.errorEmailText !== null) document.getElementById('inputEmail').focus();
+            return {
+                        ...state,
+                        inputEmailValue:           payload.inputEmailValue,
+                        errorEmailText:            payload.errorEmailText
+                    };                
+                    
 
         default:
             return state;

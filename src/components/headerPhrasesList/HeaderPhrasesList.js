@@ -25,6 +25,8 @@ let all_input_sections      = null;
 
 let all_input_sectionsDB    = null;
 
+let phrases_wrapper_visibility = null;
+
 
 export function HeaderPhrasesList() {
 
@@ -41,6 +43,8 @@ export function HeaderPhrasesList() {
     all_input_sections    = useSelector((store) => store.all_input_sections);
 
     all_input_sectionsDB  = useSelector((store) => store.all_input_sectionsDB);
+    
+    phrases_wrapper_visibility = useSelector((store) => store.phrases_wrapper_visibility);
 
     
 
@@ -86,6 +90,7 @@ export function HeaderPhrasesList() {
                                                                                         list_listen_wrapper:false,
                                                                                         phrases:            '',
                                                                                         statistics_wrapper_visibility: {display: 'none'},
+                                                                                        phrases_wrapper_visibility: {display: 'block'},                                                                                        
                                                                                         phrasesTitle:       work3,
                                                                                         all_input_sections:  
                                                                                         {
@@ -105,7 +110,7 @@ export function HeaderPhrasesList() {
                             >
                                 {work3}
                             </div>)
-    }
+    }//for
 
 
     if(list_phrases_wrapper === 'visible') return work2
@@ -113,22 +118,3 @@ export function HeaderPhrasesList() {
 
 
 }// end of HeaderListenList------------
-
-/*
-
-let dispatch = useDispatch();  
-
-useEffect(() => {
-  fetch('/getGreatings')
-  .then(response => response.json())
-  .then(phrases => {
-    dispatch({type: 'ShowCurrentPhrases', 
-      payload: {
-        phrases: phrases
-      }
-    })
-
-  })
-});
-
-*/

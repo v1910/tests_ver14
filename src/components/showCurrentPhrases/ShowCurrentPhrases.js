@@ -26,8 +26,8 @@ export function ShowCurrentPhrases() {  //--------------------------------------
 //console.log('ShowCurrentPhrases phrases_all.length=',phrases_all.length) 
 
   
-  const phrasesTitle          = useSelector((store) => store.phrasesTitle);
-  
+//  const phrasesTitle          = useSelector((store) => store.phrasesTitle);
+  const currentPhrases          = useSelector((store) => store.currentPhrases);  
 
   
   //let phrasesRules     = '';
@@ -55,10 +55,9 @@ export function ShowCurrentPhrases() {  //--------------------------------------
   const el = document.getElementById('phrases_wrapper');
   el.scrollIntoView({block: "start", behavior: "smooth"});
 
-  return <>
-    <div id='phrasesTitleName'>{phrasesTitle}</div>
-    {workPhrases}
-  </>
+  return <div>  <div id='phrasesTitleName'>{currentPhrases}</div>
+		{workPhrases}
+	 </div>
 
   
 }//---end of ShowCurrentPhrases

@@ -46,6 +46,7 @@ export function HeaderStatistics() {
                                                             list_listen_wrapper:false,
                                                             phrases:            '',
                                                             statistics_wrapper_visibility: {display: 'block'},
+                                                            phrases_wrapper_visibility:  {display: 'none'},                                                            
                                                             all_input_sections:
                                                                 {
                                                                   all_input_tests:      all_input_sections.all_input_tests,
